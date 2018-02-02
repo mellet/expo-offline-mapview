@@ -63,10 +63,10 @@ export default class App extends React.Component {
         <MapView
           style={{ flex: 1 }}
           initialRegion={{
-            latitude: 69.6488069,
-            longitude: 18.956678,
-            latitudeDelta: 0.05,
-            longitudeDelta: 0.05,
+            latitude: 21.3280192,
+            longitude: -157.8692847,
+            latitudeDelta: 1,
+            longitudeDelta: 1,
           }}
           onRegionChange={this.handleMapRegionChange}>
           <MapView.UrlTile urlTemplate={urlTemplate} zIndex={1} />
