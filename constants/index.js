@@ -1,4 +1,4 @@
-import { FileSystem } from 'expo'
+import * as FileSystem from 'expo-file-system'
 
 export default {
   TILE_FOLDER: `${FileSystem.documentDirectory}tiles`,

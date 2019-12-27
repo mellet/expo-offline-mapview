@@ -1,6 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { FileSystem, MapView, Constants } from 'expo'
+import { StyleSheet, Text, View, Platform } from 'react-native'
+import MapView from 'react-native-maps'
+import * as FileSystem from 'expo-file-system'
+import Constants from 'expo-constants';
 import { Button } from 'react-native-elements'
 import AppConstans from '../constants'
 import DownloadSettings from './DownloadSettings'
@@ -38,19 +40,16 @@ export default class App extends React.Component {
         <View style={styles.actionContainer}>
           <Button
             raised
-            borderRadius={5}
             title={'Download'}
-            onPress={() => this.setState({ showDownloadSettings: true })}
+            onPress={() => this.setState({ showDownloadSettings: !this.state.showDownloadSettings })}
           />
           <Button
             raised
-            borderRadius={5}
             title={'Clear tiles'}
             onPress={this.clearTiles}
           />
           <Button
             raised
-            borderRadius={5}
             title={isOffline ? 'Go online' : 'Go offline'}
             onPress={() => {
               isOffline
@@ -62,6 +61,7 @@ export default class App extends React.Component {
 
         <MapView
           style={{ flex: 1 }}
+          mapType={Platform.OS == "android" ? "none" : "standard"}
           initialRegion={{
             latitude: 21.3280192,
             longitude: -157.8692847,
