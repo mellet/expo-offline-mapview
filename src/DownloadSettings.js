@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Slider, ActivityIndicator } from 'react-native'
-import { FileSystem, Constants } from 'expo'
+import * as FileSystem from 'expo-file-system'
+import Constants from 'expo-constants';
 import { Card, Button } from 'react-native-elements'
 import { tileGridForRegion } from '../utilities/TileGrid'
 import AppConstans from '../constants'
@@ -71,7 +72,7 @@ export default class DownloadSettings extends React.Component {
         <Slider
           step={1}
           minimumValue={this.state.minZoom}
-          maximumValue={20}
+          maximumValue={16}
           onValueChange={this._handleSliderChange}
         />
 
