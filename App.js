@@ -1,3 +1,10 @@
-import App from "./src/App";
+import React from 'react'
+import { App } from './src/App'
 
-export default App;
+class Root extends React.Component {
+  render() {
+    return <App />
+  }
+}
+
+export default Root
