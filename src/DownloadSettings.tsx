@@ -1,5 +1,6 @@
 import React, { FC, useState, useMemo } from 'react'
-import { StyleSheet, Text, Slider, ActivityIndicator } from 'react-native'
+import { StyleSheet, Text, ActivityIndicator } from 'react-native'
+import Slider from '@react-native-community/slider';
 import * as FileSystem from 'expo-file-system'
 import { Card, Button } from 'react-native-elements'
 import { tileGridForRegion } from '../utilities/TileGrid'

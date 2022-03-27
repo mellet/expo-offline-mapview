@@ -4,7 +4,6 @@
     "description": "This project is really great.",
     "slug": "expo-offline-mapview",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android"

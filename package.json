@@ -5,20 +5,21 @@
     "start": "expo start"
   },
   "dependencies": {
-    "expo": "^36.0.0",
-    "expo-constants": "~8.0.0",
-    "expo-file-system": "~8.0.0",
-    "react": "16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "@react-native-community/slider": "4.1.12",
+    "expo": "^44.0.0",
+    "expo-constants": "~13.0.1",
+    "expo-file-system": "~13.1.4",
+    "react": "17.0.1",
+    "react-native": "0.64.3",
     "react-native-elements": "^1.2.7",
-    "react-native-maps": "~0.26.1",
+    "react-native-maps": "0.29.4",
     "slippy-grid": "^2.3.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.20",
-    "@types/react-native": "^0.61.16",
-    "babel-preset-expo": "^8.0.0",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "~0.64.12",
+    "babel-preset-expo": "9.0.2",
     "expo-cli": "~3.11.3",
-    "typescript": "^3.7.5"
+    "typescript": "~4.3.5"
   }
 }
