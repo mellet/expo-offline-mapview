@@ -61,6 +61,19 @@ export const DownloadSettings: FC<Props> = ({ mapRegion, onFinish }) => {
     onFinish()
   }
 
+  const DownloadButton = useMemo(() => {
+    if (isLoading) {
+      return <ActivityIndicator size="large" />
+    }
+    return (
+      <Button
+        raised
+        title="Dowload tiles"
+        onPress={fetchTiles}
+      />
+    )
+  }, [isLoading])
+
   return (
     <Card
       title={'Select number of zoom levels to download'}
@@ -79,9 +92,7 @@ export const DownloadSettings: FC<Props> = ({ mapRegion, onFinish }) => {
         maximumValue={4}
         onValueChange={setZoomLevels}
       />
-
-      {isLoading && <ActivityIndicator />}
-      {!isLoading && <Button raised title="Dowload tiles" onPress={fetchTiles} />}
+      {DownloadButton}
     </Card>
   )
 }
