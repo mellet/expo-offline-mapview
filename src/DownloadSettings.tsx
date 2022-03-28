@@ -1,5 +1,6 @@
 import React, { FC, useState, useMemo } from 'react'
-import { StyleSheet, Text, Slider, ActivityIndicator } from 'react-native'
+import { StyleSheet, Text, ActivityIndicator } from 'react-native'
+import Slider from '@react-native-community/slider';
 import * as FileSystem from 'expo-file-system'
 import { Card, Button } from 'react-native-elements'
 import { tileGridForRegion } from '../utilities/TileGrid'
@@ -60,6 +61,19 @@ export const DownloadSettings: FC<Props> = ({ mapRegion, onFinish }) => {
     onFinish()
   }
 
+  const DownloadButton = useMemo(() => {
+    if (isLoading) {
+      return <ActivityIndicator size="large" />
+    }
+    return (
+      <Button
+        raised
+        title="Dowload tiles"
+        onPress={fetchTiles}
+      />
+    )
+  }, [isLoading])
+
   return (
     <Card
       title={'Select number of zoom levels to download'}
@@ -78,9 +92,7 @@ export const DownloadSettings: FC<Props> = ({ mapRegion, onFinish }) => {
         maximumValue={4}
         onValueChange={setZoomLevels}
       />
-
-      {isLoading && <ActivityIndicator />}
-      {!isLoading && <Button raised title="Dowload tiles" onPress={fetchTiles} />}
+      {DownloadButton}
     </Card>
   )
 }
